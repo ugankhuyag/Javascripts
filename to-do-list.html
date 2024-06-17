@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="to-do-list.css">
+</head>
+<body>
+
+    <header><h1>My ToDo list</h1></header>
+
+        <div class="list">
+            <div>My todo list #1</div>
+            <div>My todo list #1</div>
+            <div>My todo list #1</div>
+            <div>My todo list #1</div>
+            <div>My todo list #1</div>
+            <div>My todo list #1</div>
+            <div>My todo list #1</div>  
+    
+            <input id="input" placeholder = "Enter to do list ..."/>
+        </div>
+    <button onclick="run ();">Add task</button>
+    
+    <script>
+        function run () {
+            const n = getVariableFromInput ();
+            const value = input (n)
+            print (value);
+        }
+    </script>
+
+</body>
+</html>
