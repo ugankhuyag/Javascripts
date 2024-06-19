@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List without JS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+</head>
+<body>
+    <div class="container pt-6">
+        <div class="columns">
+            <div class="column is-half is-offset-one-quarter">    
+            <h1 class="title is-1 has-background-success-85 mb-6 has-text-centered">My TODO list</h1>  
+        
+            <div class="card">
+                <div class="card-content">
+                    <div class="is-flex is-align-items-center is-justify-content-space-between">
+                        <div>shal ugaah</div>
+                        <div class ="buttons">
+                            <button class="button is-small is-danger is-outlined" onclick="deleteTask(${i});">Delete</button>
+                            <button class="button is-small" onclick="editTask(${i});">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <input class="input is-primary mb-3" type="text" placeholder="Enter task"/>
+                
+                <div class="buttons" style="justify-content: center;">
+                    <button class="button is-primary is-hovered" class="button is-large mb-6">Add task</button>
+                <div id="tasks"></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script>
+        const tasks = ["shalaa ugaah", "hogoo shuurdeh", "toosoo archih"];
+
+        function deleteTask(position) {
+            if (confirm ("Are you sure to delete")) {
+                task.splice(position, 1);
+                render();
+            }
+        }
+
+        function editTask (position) {
+            const name = prompt("Edit taks");
+            render ();
+        }
+
+        function render () {
+            let tasksHtml = "";
+            for (let i = 0; i < tasks.length; i++){
+                const oneTask = `
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <div class="is-flex is-align-items-center is-justify-content-space-between">
+                                                <div>${tasks[i]}</div>
+                                                <div class ="buttons">
+                                                    <button class="button is-small is-danger is-outlined" onclick="deleteTask(${i});">Delete</button>
+                                                    <button class="button is-small" onclick="editTask(${i});">Edit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                `;
+                tasksHtml +=oneTask;
+            }
+        document.getElementById("tasks").innerHTML = taskHtml;
+        }
+        render();
+
+    </script>
+
+</body>
+</html>
